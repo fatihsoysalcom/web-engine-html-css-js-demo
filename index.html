@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Engine Demo</title>
+    <style>
+        /* CSS is interpreted by the web engine to apply styles to the page elements */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 500px;
+            margin: 20px;
+        }
+        h1 {
+            color: #0056b3;
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #message {
+            font-size: 1.2em;
+            margin-top: 20px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Web Engine's Role in Action</h1>
+        <p>This simple page demonstrates how HTML, CSS, and JavaScript combine to create a dynamic web experience.</p>
+        <!-- HTML defines the structure and content, which the web engine parses and builds the DOM -->
+        <div id="message">Click the button to see interactivity!</div>
+        <button id="actionButton">Change Message</button>
+    </div>
+
+    <script>
+        // JavaScript adds interactivity, executed by the web engine's JavaScript engine
+        document.getElementById('actionButton').addEventListener('click', function() {
+            const messageDiv = document.getElementById('message');
+            if (messageDiv.textContent === "Click the button to see interactivity!") {
+                messageDiv.textContent = "The web engine just re-rendered this change!";
+                messageDiv.style.color = '#28a745'; // Change color via JS
+            } else {
+                messageDiv.textContent = "Click the button to see interactivity!";
+                messageDiv.style.color = '#555'; // Reset color
+            }
+            // When JavaScript modifies the DOM or styles, the web engine detects these changes
+            // and efficiently re-renders the affected parts of the page.
+        });
+    </script>
+</body>
+</html>
